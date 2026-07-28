@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stop Cyberbullying</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+body{
+    background:#eef6ff;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(90deg,#0d47a1,#1976d2);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    margin-top:10px;
+}
+
+nav{
+    background:#1565c0;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero img{
+    width:220px;
+    animation:melayang 3s infinite;
+}
+
+@keyframes melayang{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+.hero h2{
+    margin-top:20px;
+    font-size:34px;
+    color:#0d47a1;
+}
+
+.hero p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.btn{
+    margin-top:25px;
+    padding:14px 25px;
+    border:none;
+    background:#0d47a1;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.btn:hover{
+    background:#1976d2;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin:25px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.card h2{
+    color:#0d47a1;
+    margin-bottom:15px;
+}
+
+ul{
+    margin-left:20px;
+}
+
+.quiz{
+    text-align:center;
+}
+
+.quiz button{
+    margin:10px;
+    padding:12px 20px;
+    border:none;
+    background:#1565c0;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.quiz button:hover{
+    background:#0d47a1;
+}
+
+footer{
+    margin-top:40px;
+    text-align:center;
+    background:#0d47a1;
+    color:white;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🛡 STOP CYBERBULLYING</h1>
+<p>Bijak Bermedia Sosial, Hormati Sesama</p>
+</header>
+
+<nav>
+<a href="#pengertian">Pengertian</a>
+<a href="#dampak">Dampak</a>
+<a href="#cara">Pencegahan</a>
+<a href="#quiz">Kuis</a>
+</nav>
+
+<section class="hero">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<h2>Jadilah Pengguna Internet yang Baik</h2>
+
+<p>
+Cyberbullying dapat melukai perasaan seseorang.
+Mari bersama menciptakan internet yang aman dan nyaman.
+</p>
+
+<button class="btn" onclick="pesan()">
+Ayo Lawan Cyberbullying
+</button>
+
+</section>
+
+<div class="container">
+
+<div class="card" id="pengertian">
+<h2>📘 Apa itu Cyberbullying?</h2>
+
+<p>
+Cyberbullying adalah tindakan mengejek, menghina,
+mengancam, atau menyebarkan informasi yang menyakiti orang lain
+melalui internet, media sosial, game online, maupun aplikasi pesan.
+</p>
+
+</div>
+
+<div class="card" id="dampak">
+
+<h2>⚠ Dampak Cyberbullying</h2>
+
+<ul>
+<li>Stres dan cemas</li>
+<li>Menurunnya rasa percaya diri</li>
+<li>Prestasi belajar menurun</li>
+<li>Takut menggunakan media sosial</li>
+<li>Mengganggu kesehatan mental</li>
+</ul>
+
+</div>
+
+<div class="card" id="cara">
+
+<h2>✅ Cara Mencegah</h2>
+
+<ul>
+<li>Berpikir sebelum berkomentar.</li>
+<li>Hormati semua orang di internet.</li>
+<li>Jangan ikut menyebarkan ejekan.</li>
+<li>Blokir dan laporkan pelaku.</li>
+<li>Simpan bukti bila diperlukan.</li>
+<li>Ceritakan kepada orang tua atau guru.</li>
+</ul>
+
+</div>
+
+<div class="card quiz" id="quiz">
+
+<h2>📝 Kuis Singkat</h2>
+
+<p>Apakah mengejek teman di media sosial termasuk Cyberbullying?</p>
+
+<button onclick="benar()">Ya</button>
+
+<button onclick="salah()">Tidak</button>
+
+<h3 id="hasil"></h3>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 | Website Edukasi Cyberbullying
+
+</footer>
+
+<script>
+
+function pesan(){
+alert("Mari saling menghargai di internet dan hentikan Cyberbullying! 💙");
+}
+
+function benar(){
+document.getElementById("hasil").innerHTML="✅ Benar! Menghina atau mengejek di media sosial termasuk Cyberbullying.";
+}
+
+function salah(){
+document.getElementById("hasil").innerHTML="❌ Jawaban kurang tepat. Mengejek di media sosial termasuk Cyberbullying.";
+}
+
+</script>
+
+</body>
+</html>
