@@ -1,254 +1,363 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stop Cyberbullying</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Cyberbullying | Website Edukasi</title>
+  
+  <!-- Font Google untuk tampilan lebih bersih dan modern -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,Arial,sans-serif;
-}
+  <style>
+    /* RESET & VARIABLES */
+    :root {
+      --primary: #1e40af;       /* Biru utama */
+      --primary-hover: #1d4ed8; /* Biru terang untuk hover */
+      --secondary: #3b82f6;     /* Biru aksen */
+      --accent: #ef4444;        /* Merah aksen/peringatan */
+      --bg-light: #f8fafc;      /* Background halaman */
+      --card-bg: #ffffff;       /* Background kartu */
+      --text-dark: #0f172a;     /* Teks utama */
+      --text-muted: #64748b;    /* Teks sekunder */
+      --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      --shadow-hover: 0 20px 30px -10px rgba(30, 64, 175, 0.15);
+      --radius: 16px;
+    }
 
-body{
-    background:#eef6ff;
-    color:#333;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-header{
-    background:linear-gradient(90deg,#0d47a1,#1976d2);
-    color:white;
-    text-align:center;
-    padding:30px;
-}
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
 
-header h1{
-    font-size:40px;
-}
+    /* HEADER & NAV */
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
 
-header p{
-    margin-top:10px;
-}
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+    }
 
-nav{
-    background:#1565c0;
-    text-align:center;
-    padding:15px;
-}
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:15px;
-    font-weight:bold;
-}
+    nav {
+      background: #1e293b;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
 
-.hero{
-    text-align:center;
-    padding:70px 20px;
-}
+    nav a {
+      color: #f1f5f9;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
 
-.hero img{
-    width:220px;
-    animation:melayang 3s infinite;
-}
+    nav a:hover {
+      background: var(--primary-hover);
+      color: white;
+    }
 
-@keyframes melayang{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-}
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.hero h2{
-    margin-top:20px;
-    font-size:34px;
-    color:#0d47a1;
-}
+    .hero-img-container {
+      display: inline-block;
+      margin-bottom: 25px;
+    }
 
-.hero p{
-    margin-top:15px;
-    font-size:18px;
-}
+    .hero img {
+      width: 180px;
+      height: auto;
+      animation: melayang 3.5s ease-in-out infinite;
+      filter: drop-shadow(0 15px 10px rgba(0, 0, 0, 0.1));
+    }
 
-.btn{
-    margin-top:25px;
-    padding:14px 25px;
-    border:none;
-    background:#0d47a1;
-    color:white;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:18px;
-}
+    @keyframes melayang {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
 
-.btn:hover{
-    background:#1976d2;
-}
+    .hero h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
 
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+    }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin:25px 0;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
+    .btn {
+      padding: 14px 32px;
+      border: none;
+      background: var(--primary);
+      color: white;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    }
 
-.card h2{
-    color:#0d47a1;
-    margin-bottom:15px;
-}
+    .btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.4);
+    }
 
-ul{
-    margin-left:20px;
-}
+    /* MAIN CONTAINER & CARDS */
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 0 auto 50px;
+    }
 
-.quiz{
-    text-align:center;
-}
+    .card {
+      background: var(--card-bg);
+      padding: 35px;
+      border-radius: var(--radius);
+      margin: 25px 0;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid #e2e8f0;
+    }
 
-.quiz button{
-    margin:10px;
-    padding:12px 20px;
-    border:none;
-    background:#1565c0;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
 
-.quiz button:hover{
-    background:#0d47a1;
-}
+    .card h2 {
+      color: var(--primary);
+      margin-bottom: 18px;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-footer{
-    margin-top:40px;
-    text-align:center;
-    background:#0d47a1;
-    color:white;
-    padding:20px;
-}
-</style>
+    /* CUSTOM LISTS */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+
+    #dampak ul li::before {
+      content: "⚠️";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    #cara ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    /* KUIS SECTION */
+    .quiz {
+      text-align: center;
+      background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+    }
+
+    .quiz p {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .quiz-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .quiz button {
+      padding: 12px 30px;
+      border: 2px solid var(--primary);
+      background: white;
+      color: var(--primary);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .quiz button:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    #hasil {
+      margin-top: 15px;
+      font-size: 1.05rem;
+      min-height: 28px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 25px;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE DESIGN */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8rem; }
+      nav { flex-wrap: wrap; }
+      .card { padding: 25px; }
+      .hero img { width: 140px; }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>🛡 STOP CYBERBULLYING</h1>
-<p>Bijak Bermedia Sosial, Hormati Sesama</p>
-</header>
+  <header>
+    <h1>🛡️ STOP CYBERBULLYING</h1>
+    <p>Bijak Bermedia Sosial, Hormati Sesama</p>
+  </header>
 
-<nav>
-<a href="#pengertian">Pengertian</a>
-<a href="#dampak">Dampak</a>
-<a href="#cara">Pencegahan</a>
-<a href="#quiz">Kuis</a>
-</nav>
+  <nav>
+    <a href="#pengertian">Pengertian</a>
+    <a href="#dampak">Dampak</a>
+    <a href="#cara">Pencegahan</a>
+    <a href="#quiz">Kuis</a>
+  </nav>
 
-<section class="hero">
+  <section class="hero">
+    <div class="hero-img-container">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Stop Cyberbullying Icon">
+    </div>
+    <h2>Jadilah Pengguna Internet yang Baik</h2>
+    <p>
+      Cyberbullying dapat melukai perasaan seseorang. 
+      Mari bersama menciptakan internet yang aman, positif, dan nyaman untuk semua.
+    </p>
+    <button class="btn" onclick="pesan()">Ayo Lawan Cyberbullying</button>
+  </section>
 
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  <div class="container">
 
-<h2>Jadilah Pengguna Internet yang Baik</h2>
+    <div class="card" id="pengertian">
+      <h2>📘 Apa itu Cyberbullying?</h2>
+      <p>
+        Cyberbullying adalah tindakan mengejek, menghina, mengancam, atau menyebarkan informasi yang menyakiti orang lain melalui media digital—seperti media sosial, game online, maupun aplikasi pesan instan.
+      </p>
+    </div>
 
-<p>
-Cyberbullying dapat melukai perasaan seseorang.
-Mari bersama menciptakan internet yang aman dan nyaman.
-</p>
+    <div class="card" id="dampak">
+      <h2>⚠️ Dampak Cyberbullying</h2>
+      <ul>
+        <li>Mengganggu kesehatan mental dan memicu stres berlebih.</li>
+        <li>Menurunkan rasa percaya diri dan prestasi belajar.</li>
+        <li>Menimbulkan rasa takut serta kecemasan saat menggunakan media sosial.</li>
+        <li>Membuat korban merasa terisolasi dari lingkungan sosialnya.</li>
+      </ul>
+    </div>
 
-<button class="btn" onclick="pesan()">
-Ayo Lawan Cyberbullying
-</button>
+    <div class="card" id="cara">
+      <h2>✅ Cara Mencegah & Mengatasi</h2>
+      <ul>
+        <li>Berpikir dan saring informasi sebelum berkomentar.</li>
+        <li>Selalu hormati dan hargai perbedaan pendapat di internet.</li>
+        <li>Jangan pernah ikut-ikutan menyebarkan ejekan atau ujaran kebencian.</li>
+        <li>Segera blokir dan laporkan (report) akun pelaku bullying.</li>
+        <li>Simpan bukti tangkapan layar (screenshot) jika diperlukan.</li>
+        <li>Jangan ragu bercerita kepada orang tua, guru, atau orang dewasa terpercaya.</li>
+      </ul>
+    </div>
 
-</section>
+    <div class="card quiz" id="quiz">
+      <h2>📝 Kuis Singkat</h2>
+      <p>Apakah mengejek atau menghina teman di media sosial termasuk bentuk Cyberbullying?</p>
+      
+      <div class="quiz-buttons">
+        <button onclick="jawab(true)">Ya</button>
+        <button onclick="jawab(false)">Tidak</button>
+      </div>
 
-<div class="container">
+      <div id="hasil"></div>
+    </div>
 
-<div class="card" id="pengertian">
-<h2>📘 Apa itu Cyberbullying?</h2>
+  </div>
 
-<p>
-Cyberbullying adalah tindakan mengejek, menghina,
-mengancam, atau menyebarkan informasi yang menyakiti orang lain
-melalui internet, media sosial, game online, maupun aplikasi pesan.
-</p>
+  <footer>
+    <p>&copy; 2026 | Website Edukasi Cyberbullying</p>
+  </footer>
 
-</div>
+  <script>
+    function pesan() {
+      alert("Mari saling menghargai di internet dan hentikan Cyberbullying! 💙");
+    }
 
-<div class="card" id="dampak">
-
-<h2>⚠ Dampak Cyberbullying</h2>
-
-<ul>
-<li>Stres dan cemas</li>
-<li>Menurunnya rasa percaya diri</li>
-<li>Prestasi belajar menurun</li>
-<li>Takut menggunakan media sosial</li>
-<li>Mengganggu kesehatan mental</li>
-</ul>
-
-</div>
-
-<div class="card" id="cara">
-
-<h2>✅ Cara Mencegah</h2>
-
-<ul>
-<li>Berpikir sebelum berkomentar.</li>
-<li>Hormati semua orang di internet.</li>
-<li>Jangan ikut menyebarkan ejekan.</li>
-<li>Blokir dan laporkan pelaku.</li>
-<li>Simpan bukti bila diperlukan.</li>
-<li>Ceritakan kepada orang tua atau guru.</li>
-</ul>
-
-</div>
-
-<div class="card quiz" id="quiz">
-
-<h2>📝 Kuis Singkat</h2>
-
-<p>Apakah mengejek teman di media sosial termasuk Cyberbullying?</p>
-
-<button onclick="benar()">Ya</button>
-
-<button onclick="salah()">Tidak</button>
-
-<h3 id="hasil"></h3>
-
-</div>
-
-</div>
-
-<footer>
-
-© 2026 | Website Edukasi Cyberbullying
-
-</footer>
-
-<script>
-
-function pesan(){
-alert("Mari saling menghargai di internet dan hentikan Cyberbullying! 💙");
-}
-
-function benar(){
-document.getElementById("hasil").innerHTML="✅ Benar! Menghina atau mengejek di media sosial termasuk Cyberbullying.";
-}
-
-function salah(){
-document.getElementById("hasil").innerHTML="❌ Jawaban kurang tepat. Mengejek di media sosial termasuk Cyberbullying.";
-}
-
-</script>
+    function jawab(isCorrect) {
+      const hasilElemen = document.getElementById("hasil");
+      
+      if (isCorrect) {
+        hasilElemen.style.color = "#16a34a"; // Warna hijau
+        hasilElemen.innerHTML = "✅ Benar! Menghina atau mengejek di media sosial adalah bentuk Cyberbullying.";
+      } else {
+        hasilElemen.style.color = "#dc2626"; // Warna merah
+        hasilElemen.innerHTML = "❌ Jawaban kurang tepat. Mengejek di media sosial termasuk bentuk Cyberbullying.";
+      }
+    }
+  </script>
 
 </body>
 </html>
